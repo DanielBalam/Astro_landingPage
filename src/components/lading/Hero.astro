@@ -1,0 +1,24 @@
+---
+import About from "./About.astro";
+interface Props {
+    title: string;
+    content: string;
+    image?: string;
+}
+
+const { title , content, image } = Astro.props
+
+---
+
+<header class="bg-zinc-900 flex flex-col md:flex-row p-20 gap-3 text-center md:text-left rounded-xl">
+    <div>
+        <h1 class="text-5xl font-bold pb-2">{ title }</h1>
+        <p class="my-4 text-2xl">{ content }</p>
+        <a href="/about">
+            <button class="bg-indigo-500 px-3 py-2 hover:bg-indigo-400"> 
+                Start Now
+            </button>
+        </a>
+    </div>
+    <img src= { image ? image: "images/fingerprint.svg" } class="w-80"/>
+</header>

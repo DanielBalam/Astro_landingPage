@@ -1,0 +1,25 @@
+---
+import Footer from "../components/Footer.astro";
+import "../styles/Layout.css";
+
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Astro landing | {title}</title>
+    <link rel="icon" href="/favicon.svg" type="image/x-icon" sizes="20x20">
+  </head>
+  <body>
+    <main class="mx-auto container md:pt-10 md:px-10">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
